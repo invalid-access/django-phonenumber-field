@@ -11,6 +11,7 @@ setup(
     description="An international phone number field for django models.",
     install_requires=[
         'phonenumbers>=7.0.2',
+        'babel',
     ],
     long_description=open('README.rst').read(),
     author='Stefan Foulis',
@@ -18,6 +19,11 @@ setup(
     maintainer='Stefan Foulis',
     maintainer_email='stefan.foulis@gmail.com',
     packages=find_packages(),
+    package_data = {
+        'phonenumber_field': [
+            'locale/*/LC_MESSAGES/*',
+        ],
+    },
     include_package_data=True,
     zip_safe=False,
     classifiers=[
